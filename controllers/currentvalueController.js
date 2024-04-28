@@ -6,7 +6,7 @@ class CurrentValueController {
         try {
             const name = message.type;
             const value = message.message;
-            //console.log(name,value);
+            console.log(name,value);
             const cv = await CurrentValue.create({name, value});
             //return res.json(cv);
         } catch (e) {

@@ -1,7 +1,7 @@
 const {CurrentValue} = require("../models/models");
 
 
-class CurrentValueController {
+class TEstController {
     async create(message, res, next) {
         try {
             const name = message.type;
