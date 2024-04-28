@@ -1,0 +1,8 @@
+const demoMes = {
+    id: Date.now(),
+    event: 'event',
+    type: 'temper',
+    username: 'Санек',
+    message: 'message'
+
+}
