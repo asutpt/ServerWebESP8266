@@ -19,7 +19,7 @@ const events = (app, aWss) => {
                     case 'closeConnection':
                         ws.close();
                         break;
-                    case 'testetst':
+                    case 'teste':
                         ws.close();
                         break;
                 }
