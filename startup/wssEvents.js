@@ -19,6 +19,9 @@ const events = (app, aWss) => {
                     case 'closeConnection':
                         ws.close();
                         break;
+                    case 'testetst':
+                        ws.close();
+                        break;
                 }
             }
             catch (e) {
