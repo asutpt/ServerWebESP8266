@@ -1,4 +1,4 @@
-const {CurrentValue} = require("../models/models");
+const {CurrentValue} = require("../models/modelsDB");
 
 
 class CurrentValueController {

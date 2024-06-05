@@ -1,27 +1,33 @@
 const cvc = require('../controllers/currentvalueController');
+const concplant = require('../controllers/concplantController');
 
 
 const events = (app, aWss) => {
     app.ws('/', (ws) => {
         //ws.id = Date.now(); //для приватной комнаты
-        ws.on('message', (message) => {
+        ws.on('message', (messageWS) => {
             try{
-                console.log(JSON.stringify(message));
-                message = JSON.parse(message);
-
-
-                switch (message.event){
-
+                messageWS = JSON.parse(messageWS);
+                //console.log(messageWS.message);
+                switch (messageWS.Event){
                     case 'sendData':
-                        cvc.create(message).then();
-                        broadcastMessage(message, ws);
+                        cvc.create(messageWS).then();
+                        broadcastMessage(messageWS, ws);
                         break;
-                    case 'closeConnection':
-                        ws.close();
+
+                    case 'check':
+                        //concplant.create(messageWS, messageWS.Plant).then();
+                        broadcastMessage(messageWS, ws);
                         break;
-                    case 'teste':
-                        ws.close();
+                    case 'sendDataSQL':
+                        concplant.create(messageWS, messageWS.Plant).then();
+                        broadcastMessage(messageWS, ws);
                         break;
+
+
+                    // case 'closeConnection':
+                    //     ws.close();
+                    //     break;
                 }
             }
             catch (e) {
