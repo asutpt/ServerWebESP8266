@@ -1,8 +1,11 @@
 const demoMes = {
-    id: Date.now(),
-    event: 'event',
-    type: 'temper',
-    username: 'Санек',
-    message: 'message'
+    Id: Date.now(),
+    Event: 'event',
+    Plant: 'temper',
+    UserName: 'Санек',
+    Message = {
+        Field: 'id'
+        Value: '999'
+    }
 
 }
