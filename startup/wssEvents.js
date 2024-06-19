@@ -5,15 +5,12 @@ let count = 0;
 
 const events = (app, aWss) => {
     let interval = setInterval( () => {
-            // if(count < 10) {
-            //
-            //     console.log(count  + "  =>>  SendBroadCast!");
-            // }
-             count = count + 1;
+            count = count + 1;
             console.log(count);
-            broadcastMessage({Field: "id_master", Value: count}, "Checking");
+            let mes = [{Field: "id_master", Value: count}, {Field: "id_master", Value: count}];
+            broadcastMessage(mes, "Checking");
         }
-        , 50);
+        , 100);
     app.ws('/', (ws) => {
         console.log("3rf3f ");
 
@@ -67,6 +64,7 @@ const events = (app, aWss) => {
             message.Message = mes;
 
             client.send(JSON.stringify(message));
+            console.log(aWss.clients.size)
         })
     }
 
