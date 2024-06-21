@@ -1,4 +1,5 @@
-const {DataTypes} = require("sequelize");
+const {parseDate} = require('../state/func');
+
 
 class ConcplantValue{
     id_master = 0
@@ -31,6 +32,7 @@ class ConcplantValue{
     all_count = 0
     id_prog = 0
     change_bunk_id = 0
+    created_at = ''
 
     setParam(param){
         if(param){
@@ -125,6 +127,9 @@ class ConcplantValue{
                         break;
                     case "CHANGE_BUNK_ID":
                         this.change_bunk_id = p.Value;
+                        break;
+                    case "created_at":
+                        this.created_at = parseDate(p.Value);
                         break;
 
 

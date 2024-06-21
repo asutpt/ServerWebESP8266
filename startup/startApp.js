@@ -1,18 +1,18 @@
-const mysql = require("./db");
+const {dateNow} = require('../state/func');
 const mysqlMulin = require("./dbMulin");
 
 module.exports  = async (app) => {
     try{
-        await mysql.authenticate().then();
-        await mysql.sync({ alter: true }).then();
-
-        await mysqlMulin.authenticate().then();
-        await mysqlMulin.sync({ alter: true }).then();
-
+        console.log(dateNow() + ':  Cтарт приложения...');
+        await mysqlMulin.authenticate();
+        await mysqlMulin.sync({ alter: true });
         app.listen(process.env.PORT);
     }
     catch(e){
-        return e;
+        console.log(dateNow() + ':  ' + e)
+        /*setTimeout(() => {
+            console.log(dateNow() + ':  Перезапуск приложения!');
+        }, 5000);*/
     }
-    return `MYSQL подключена, MYSQL синхронизированна, сервер запущен, порт: ${process.env.PORT}`;
+    return `MYSQL подключена, MYSQL синхронизирована, сервер запущен, порт: ${process.env.PORT}`;
 }
