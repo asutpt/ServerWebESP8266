@@ -40,7 +40,7 @@ const Concplant1 = mysqlMulin.define('concplant_1', {       //инициализ
     cur_count: {type: DataTypes.INTEGER},
     all_count: {type: DataTypes.INTEGER},
     id_prog: {type: DataTypes.BIGINT},
-    change_bunk: {type: DataTypes.BIGINT},
+    change_bunk_id: {type: DataTypes.BIGINT},
 
 },
     {freezeTableName: true})

@@ -30,7 +30,7 @@ class ConcplantValue{
     cur_count = 0
     all_count = 0
     id_prog = 0
-    change_bunk = 0
+    change_bunk_id = 0
 
     setParam(param){
         if(param){
@@ -39,92 +39,92 @@ class ConcplantValue{
                     case "id_master":
                         this.id_master = p.Value;
                         break;
-                    case "sand_netto":
+                    case "SAND_NETTO":
                         this.sand_netto = p.Value;
                         break;
-                    case "sand_set":
+                    case "SAND_SET":
                         this.sand_set = p.Value;
                         break;
-                    case "rub_netto":
+                    case "RUB_NETTO":
                         this.rub_netto = p.Value;
                         break;
-                    case "rub_set":
+                    case "RUB_SET":
                         this.rub_set = p.Value;
                         break;
-                    case "keram_netto":
+                    case "KERAM_NETTO":
                         this.keram_netto = p.Value;
                         break;
-                    case "keram_set":
+                    case "KERAM_SET":
                         this.keram_set = p.Value;
                         break;
-                    case "null_netto":
+                    case "NULL_NETTO":
                         this.null_netto = p.Value;
                         break;
-                    case "null_set":
+                    case "NULL_SET":
                         this.null_set = p.Value;
                         break;
-                    case "cem1_netto":
+                    case "CEM1_NETTO":
                         this.cem1_netto = p.Value;
                         break;
-                    case "cem1_set":
+                    case "CEM1_SET":
                         this.cem1_set = p.Value;
                         break;
-                    case "cem2_netto":
+                    case "CEM2_NETTO":
                         this.cem2_netto = p.Value;
                         break;
-                    case "cem2_set":
+                    case "CEM2_SET":
                         this.cem2_set = p.Value;
                         break;
-                    case "cem3_netto":
+                    case "CEM3_NETTO":
                         this.cem3_netto = p.Value;
                         break;
-                    case "cem3_set":
+                    case "CEM3_SET":
                         this.cem3_set = p.Value;
                         break;
-                    case "wat1_netto":
+                    case "WAT1_NETTO":
                         this.wat1_netto = p.Value;
                         break;
-                    case "wat1_set":
+                    case "WAT1_SET":
                         this.wat1_set = p.Value;
                         break;
-                    case "wat2_netto":
+                    case "WAT2_NETTO":
                         this.wat2_netto = p.Value;
                         break;
-                    case "wat2_set":
+                    case "WAT2_SET":
                         this.wat2_set = p.Value;
                         break;
-                    case "chem1_netto":
+                    case "CHEM1_NETTO":
                         this.chem1_netto = p.Value;
                         break;
-                    case "chem1_set":
+                    case "CHEM1_SET":
                         this.chem1_set = p.Value;
                         break;
-                    case "chem2_netto":
+                    case "CHEM2_NETTO":
                         this.chem2_netto = p.Value;
                         break;
-                    case "chem2_set":
+                    case "CHEM2_SET":
                         this.chem2_set = p.Value;
                         break;
-                    case "chem3_netto":
+                    case "CHEM3_NETTO":
                         this.chem3_netto = p.Value;
                         break;
-                    case "chem3_set":
+                    case "CHEM3_SET":
                         this.chem3_set = p.Value;
                         break;
-                    case "mix_current":
+                    case "MIX_CURRENT":
                         this.mix_current = p.Value;
                         break;
-                    case "cur_count":
+                    case "CUR_COUNT":
                         this.cur_count = p.Value;
                         break;
-                    case "all_count":
+                    case "ALL_COUNT":
                         this.all_count = p.Value;
                         break;
-                    case "id_prog":
+                    case "ID_PROG":
                         this.id_prog = p.Value;
                         break;
-                    case "change_bunk":
-                        this.change_bunk = p.Value;
+                    case "CHANGE_BUNK_ID":
+                        this.change_bunk_id = p.Value;
                         break;
 
 
