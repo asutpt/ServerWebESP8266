@@ -9,7 +9,8 @@ module.exports = new Sequelize(
         dialect: process.env.DB_DIALECT,
         host: process.env.DB_HOST,
         port: process.env.DB_PORT,
-        logging: console.log,
+        logging: false,
+
     },
 
 

@@ -4,7 +4,7 @@ const plant2 = process.env.PLANT2 || 2;
 const plant3 = process.env.PLANT3 || 3;
 const plant4 = process.env.PLANT4 || 4;
 const plant5 = process.env.PLANT5 || 5;
-const username = process.env.USERNAME || "Server";
+const userr = process.env.USER1 || "_Server";
 
 const events = (app, aWss) => {
     try{
@@ -67,29 +67,31 @@ const events = (app, aWss) => {
         const res1 = await concplant.getLastId(plant1).then();
         const id_master1 = res1 ? res1.id_master : 0;
         if(id_master1 >= 0) {
-            mes1 = [{Field: "id_master", Value: id_master1}];
+            mes1 = [{Field: "id_master", Value: id_master1.toString()}];
             //console.log(mes1)
         }
 
         aWss.clients.forEach(client => {
-            if(mes1) sendMessage(client, "Checking", plant1, username, mes1);
+            if(mes1) sendMessage(client, "Checking", plant1, userr, mes1);
+
+            console.log(concplant.DateNow() + ' ' + userr + ': Отправка на PLANT=' + plant1 + ' => id_master=' + mes1[0].Value);
         })
     }
 
-    const broadcastMessage = (mes, event) => {     //отправляем всем сообщение широковещательное
-        aWss.clients.forEach(client => {
-            //if(client.id === id){}        //для приватной комнаты
-            let message = {};
-            message.Id = Date.now();
-            message.Event = event;
-            message.Username = 'Server';
-            message.Plant = 0;
-            message.Message = mes;
-
-            client.send(JSON.stringify(message));
-            console.log(aWss.clients.size)
-        })
-    }
+    // const broadcastMessage = (mes, event) => {     //отправляем всем сообщение широковещательное
+    //     aWss.clients.forEach(client => {
+    //         //if(client.id === id){}        //для приватной комнаты
+    //         let message = {};
+    //         message.Id = Date.now();
+    //         message.Event = event;
+    //         message.Username = 'Server';
+    //         message.Plant = 0;
+    //         message.Message = mes;
+    //
+    //         client.send(JSON.stringify(message));
+    //         console.log(aWss.clients.size)
+    //     })
+    // }
 
 }
 

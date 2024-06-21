@@ -7,6 +7,12 @@ const {ConcplantValue} = require("../models/models");
 
 
 class ConcplantController {
+    DateNow(){
+       return new Date().toISOString().
+        replace(/T/, ' ').
+            replace(/\..+/, '')
+    }
+
     async create(messageWs, res, next) {
         try {
             if(!messageWs)
