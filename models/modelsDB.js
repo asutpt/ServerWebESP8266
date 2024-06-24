@@ -2,7 +2,7 @@ const mysqlMulin = require('../startup/dbMulin');
 const {DataTypes} = require('sequelize');
 
 
-const Concplant1 = mysqlMulin.define('concplant_1', {       //инициализация
+const Concplant1 = mysqlMulin.define('concplant_1', {
         id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
         id_master: {type: DataTypes.BIGINT, allowNull: false},
         sand_netto: {type: DataTypes.FLOAT},
@@ -38,7 +38,7 @@ const Concplant1 = mysqlMulin.define('concplant_1', {       //инициализ
     },
     {freezeTableName: true})
 
-const Concplant2 = mysqlMulin.define('concplant_2', {       //инициализация
+const Concplant2 = mysqlMulin.define('concplant_2', {
         id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
         id_master: {type: DataTypes.BIGINT, allowNull: false},
         sand_netto: {type: DataTypes.FLOAT},
@@ -74,7 +74,7 @@ const Concplant2 = mysqlMulin.define('concplant_2', {       //инициализ
     },
     {freezeTableName: true})
 
-const Concplant3 = mysqlMulin.define('concplant_3', {       //инициализация
+const Concplant3 = mysqlMulin.define('concplant_3', {
         id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
         id_master: {type: DataTypes.BIGINT, allowNull: false},
         sand_netto: {type: DataTypes.FLOAT},
@@ -110,7 +110,7 @@ const Concplant3 = mysqlMulin.define('concplant_3', {       //инициализ
     },
     {freezeTableName: true})
 
-const Concplant4 = mysqlMulin.define('concplant_4', {       //инициализация
+const Concplant4 = mysqlMulin.define('concplant_4', {
         id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
         id_master: {type: DataTypes.BIGINT, allowNull: false},
         sand_netto: {type: DataTypes.FLOAT},
@@ -146,7 +146,7 @@ const Concplant4 = mysqlMulin.define('concplant_4', {       //инициализ
     },
     {freezeTableName: true})
 
-const Concplant5 = mysqlMulin.define('concplant_5', {       //инициализация
+const Concplant5 = mysqlMulin.define('concplant_5', {
         id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
         id_master: {type: DataTypes.BIGINT, allowNull: false},
         sand_netto: {type: DataTypes.FLOAT},
@@ -512,7 +512,7 @@ const LevelMaterial5 = mysqlMulin.define('level_material_5', {
     },
     {freezeTableName: true})
 
-const LogException1 = mysqlMulin.define('logs_exception_1', {
+const LogsException1 = mysqlMulin.define('logs_exception_1', {
             id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
             id_master: {type: DataTypes.BIGINT, allowNull: false},
             name_function: {type: DataTypes.TEXT},
@@ -522,7 +522,7 @@ const LogException1 = mysqlMulin.define('logs_exception_1', {
     },
     {freezeTableName: true})
 
-const LogException2 = mysqlMulin.define('logs_exception_2', {
+const LogsException2 = mysqlMulin.define('logs_exception_2', {
             id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
             id_master: {type: DataTypes.BIGINT, allowNull: false},
             name_function: {type: DataTypes.TEXT},
@@ -532,7 +532,7 @@ const LogException2 = mysqlMulin.define('logs_exception_2', {
     },
     {freezeTableName: true})
 
-const LogException3 = mysqlMulin.define('logs_exception_3', {
+const LogsException3 = mysqlMulin.define('logs_exception_3', {
             id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
             id_master: {type: DataTypes.BIGINT, allowNull: false},
             name_function: {type: DataTypes.TEXT},
@@ -542,7 +542,7 @@ const LogException3 = mysqlMulin.define('logs_exception_3', {
     },
     {freezeTableName: true})
 
-const LogException4 = mysqlMulin.define('logs_exception_4', {
+const LogsException4 = mysqlMulin.define('logs_exception_4', {
             id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
             id_master: {type: DataTypes.BIGINT, allowNull: false},
             name_function: {type: DataTypes.TEXT},
@@ -562,7 +562,7 @@ const LogsException5 = mysqlMulin.define('logs_exception_5', {
     },
     {freezeTableName: true})
 
-const LogMaterial1 = mysqlMulin.define('logs_materials_1', {
+const LogsMaterial1 = mysqlMulin.define('logs_materials_1', {
             id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
             id_master: {type: DataTypes.BIGINT, allowNull: false},
             material: {type: DataTypes.INTEGER},
@@ -576,7 +576,7 @@ const LogMaterial1 = mysqlMulin.define('logs_materials_1', {
     },
     {freezeTableName: true})
 
-const LogMaterial2 = mysqlMulin.define('logs_materials_2', {
+const LogsMaterial2 = mysqlMulin.define('logs_materials_2', {
             id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
             id_master: {type: DataTypes.BIGINT, allowNull: false},
             material: {type: DataTypes.INTEGER},
@@ -590,7 +590,7 @@ const LogMaterial2 = mysqlMulin.define('logs_materials_2', {
     },
     {freezeTableName: true})
 
-const LogMaterial3 = mysqlMulin.define('logs_materials_3', {
+const LogsMaterial3 = mysqlMulin.define('logs_materials_3', {
             id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
             id_master: {type: DataTypes.BIGINT, allowNull: false},
             material: {type: DataTypes.INTEGER},
@@ -604,7 +604,7 @@ const LogMaterial3 = mysqlMulin.define('logs_materials_3', {
     },
     {freezeTableName: true})
 
-const LogMaterial4 = mysqlMulin.define('logs_materials_4', {
+const LogsMaterial4 = mysqlMulin.define('logs_materials_4', {
             id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
             id_master: {type: DataTypes.BIGINT, allowNull: false},
             material: {type: DataTypes.INTEGER},
@@ -618,7 +618,7 @@ const LogMaterial4 = mysqlMulin.define('logs_materials_4', {
     },
     {freezeTableName: true})
 
-const LogMaterial5 = mysqlMulin.define('logs_materials_5', {
+const LogsMaterial5 = mysqlMulin.define('logs_materials_5', {
             id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
             id_master: {type: DataTypes.BIGINT, allowNull: false},
             material: {type: DataTypes.INTEGER},
@@ -742,20 +742,363 @@ const StoreLevel5 = mysqlMulin.define('store_level_5', {
     },
     {freezeTableName: true})
 
+const RequestRecept1 = mysqlMulin.define('request_recept_1', {
+            id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
+            id_master: {type: DataTypes.BIGINT, allowNull: false},
+            client: {type: DataTypes.TEXT},
+            car: {type: DataTypes.TEXT},
+            drivename: {type: DataTypes.TEXT},
+            shipper: {type: DataTypes.TEXT},
+            perevoz: {type: DataTypes.TEXT},
+            produc: {type: DataTypes.TEXT},
+            rec_name: {type: DataTypes.TEXT},
+            bunk1_mat_id: {type: DataTypes.INTEGER},
+            bunk2_mat_id: {type: DataTypes.INTEGER},
+            bunk3_mat_id: {type: DataTypes.INTEGER},
+            bunk4_mat_id: {type: DataTypes.INTEGER},
+            volume: {type: DataTypes.FLOAT},
+            volume_false: {type: DataTypes.FLOAT},
+            sand: {type: DataTypes.FLOAT},
+            rub: {type: DataTypes.FLOAT},
+            keram: {type: DataTypes.FLOAT},
+            _null: {type: DataTypes.FLOAT},
+            cem1: {type: DataTypes.FLOAT},
+            cem2: {type: DataTypes.FLOAT},
+            wat1: {type: DataTypes.FLOAT},
+            chem1: {type: DataTypes.FLOAT},
+            chem2: {type: DataTypes.FLOAT},
+            chem3: {type: DataTypes.FLOAT},
+            status: {type: DataTypes.INTEGER},
+            on_print: {type: DataTypes.INTEGER},
+            created_at: {type: DataTypes.DATE},
+            processed_at: {type: DataTypes.DATE},
+            finish_at: {type: DataTypes.DATE},
+            created_by: {type: DataTypes.INTEGER},
+            processed_by: {type: DataTypes.INTEGER},
+            finish_by: {type: DataTypes.INTEGER},
+
+    },
+    {freezeTableName: true})
+
+const RequestRecept2 = mysqlMulin.define('request_recept_2', {
+            id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
+            id_master: {type: DataTypes.BIGINT, allowNull: false},
+            client: {type: DataTypes.TEXT},
+            car: {type: DataTypes.TEXT},
+            drivename: {type: DataTypes.TEXT},
+            shipper: {type: DataTypes.TEXT},
+            perevoz: {type: DataTypes.TEXT},
+            produc: {type: DataTypes.TEXT},
+            rec_name: {type: DataTypes.TEXT},
+            bunk1_mat_id: {type: DataTypes.INTEGER},
+            bunk2_mat_id: {type: DataTypes.INTEGER},
+            bunk3_mat_id: {type: DataTypes.INTEGER},
+            bunk4_mat_id: {type: DataTypes.INTEGER},
+            volume: {type: DataTypes.FLOAT},
+            volume_false: {type: DataTypes.FLOAT},
+            sand: {type: DataTypes.FLOAT},
+            rub: {type: DataTypes.FLOAT},
+            keram: {type: DataTypes.FLOAT},
+            _null: {type: DataTypes.FLOAT},
+            cem1: {type: DataTypes.FLOAT},
+            cem2: {type: DataTypes.FLOAT},
+            wat1: {type: DataTypes.FLOAT},
+            chem1: {type: DataTypes.FLOAT},
+            chem2: {type: DataTypes.FLOAT},
+            chem3: {type: DataTypes.FLOAT},
+            status: {type: DataTypes.INTEGER},
+            on_print: {type: DataTypes.INTEGER},
+            created_at: {type: DataTypes.DATE},
+            processed_at: {type: DataTypes.DATE},
+            finish_at: {type: DataTypes.DATE},
+            created_by: {type: DataTypes.INTEGER},
+            processed_by: {type: DataTypes.INTEGER},
+            finish_by: {type: DataTypes.INTEGER},
+
+    },
+    {freezeTableName: true})
+
+const RequestRecept3 = mysqlMulin.define('request_recept_3', {
+            id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
+            id_master: {type: DataTypes.BIGINT, allowNull: false},
+            client: {type: DataTypes.TEXT},
+            car: {type: DataTypes.TEXT},
+            drivename: {type: DataTypes.TEXT},
+            shipper: {type: DataTypes.TEXT},
+            perevoz: {type: DataTypes.TEXT},
+            produc: {type: DataTypes.TEXT},
+            rec_name: {type: DataTypes.TEXT},
+            bunk1_mat_id: {type: DataTypes.INTEGER},
+            bunk2_mat_id: {type: DataTypes.INTEGER},
+            bunk3_mat_id: {type: DataTypes.INTEGER},
+            bunk4_mat_id: {type: DataTypes.INTEGER},
+            volume: {type: DataTypes.FLOAT},
+            volume_false: {type: DataTypes.FLOAT},
+            sand: {type: DataTypes.FLOAT},
+            rub: {type: DataTypes.FLOAT},
+            keram: {type: DataTypes.FLOAT},
+            _null: {type: DataTypes.FLOAT},
+            cem1: {type: DataTypes.FLOAT},
+            cem2: {type: DataTypes.FLOAT},
+            wat1: {type: DataTypes.FLOAT},
+            chem1: {type: DataTypes.FLOAT},
+            chem2: {type: DataTypes.FLOAT},
+            chem3: {type: DataTypes.FLOAT},
+            status: {type: DataTypes.INTEGER},
+            on_print: {type: DataTypes.INTEGER},
+            created_at: {type: DataTypes.DATE},
+            processed_at: {type: DataTypes.DATE},
+            finish_at: {type: DataTypes.DATE},
+            created_by: {type: DataTypes.INTEGER},
+            processed_by: {type: DataTypes.INTEGER},
+            finish_by: {type: DataTypes.INTEGER},
+
+    },
+    {freezeTableName: true})
+
+const RequestRecept4 = mysqlMulin.define('request_recept_4', {
+            id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
+            id_master: {type: DataTypes.BIGINT, allowNull: false},
+            client: {type: DataTypes.TEXT},
+            car: {type: DataTypes.TEXT},
+            drivename: {type: DataTypes.TEXT},
+            shipper: {type: DataTypes.TEXT},
+            perevoz: {type: DataTypes.TEXT},
+            produc: {type: DataTypes.TEXT},
+            rec_name: {type: DataTypes.TEXT},
+            bunk1_mat_id: {type: DataTypes.INTEGER},
+            bunk2_mat_id: {type: DataTypes.INTEGER},
+            bunk3_mat_id: {type: DataTypes.INTEGER},
+            bunk4_mat_id: {type: DataTypes.INTEGER},
+            volume: {type: DataTypes.FLOAT},
+            volume_false: {type: DataTypes.FLOAT},
+            sand: {type: DataTypes.FLOAT},
+            rub: {type: DataTypes.FLOAT},
+            keram: {type: DataTypes.FLOAT},
+            _null: {type: DataTypes.FLOAT},
+            cem1: {type: DataTypes.FLOAT},
+            cem2: {type: DataTypes.FLOAT},
+            wat1: {type: DataTypes.FLOAT},
+            chem1: {type: DataTypes.FLOAT},
+            chem2: {type: DataTypes.FLOAT},
+            chem3: {type: DataTypes.FLOAT},
+            status: {type: DataTypes.INTEGER},
+            on_print: {type: DataTypes.INTEGER},
+            created_at: {type: DataTypes.DATE},
+            processed_at: {type: DataTypes.DATE},
+            finish_at: {type: DataTypes.DATE},
+            created_by: {type: DataTypes.INTEGER},
+            processed_by: {type: DataTypes.INTEGER},
+            finish_by: {type: DataTypes.INTEGER},
+
+    },
+    {freezeTableName: true})
+
+const RequestRecept5 = mysqlMulin.define('request_recept_5', {
+            id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
+            id_master: {type: DataTypes.BIGINT, allowNull: false},
+            client: {type: DataTypes.TEXT},
+            car: {type: DataTypes.TEXT},
+            drivename: {type: DataTypes.TEXT},
+            shipper: {type: DataTypes.TEXT},
+            perevoz: {type: DataTypes.TEXT},
+            produc: {type: DataTypes.TEXT},
+            rec_name: {type: DataTypes.TEXT},
+            bunk1_mat_id: {type: DataTypes.INTEGER},
+            bunk2_mat_id: {type: DataTypes.INTEGER},
+            bunk3_mat_id: {type: DataTypes.INTEGER},
+            bunk4_mat_id: {type: DataTypes.INTEGER},
+            volume: {type: DataTypes.FLOAT},
+            volume_false: {type: DataTypes.FLOAT},
+            sand: {type: DataTypes.FLOAT},
+            rub: {type: DataTypes.FLOAT},
+            keram: {type: DataTypes.FLOAT},
+            _null: {type: DataTypes.FLOAT},
+            cem1: {type: DataTypes.FLOAT},
+            cem2: {type: DataTypes.FLOAT},
+            wat1: {type: DataTypes.FLOAT},
+            chem1: {type: DataTypes.FLOAT},
+            chem2: {type: DataTypes.FLOAT},
+            chem3: {type: DataTypes.FLOAT},
+            status: {type: DataTypes.INTEGER},
+            on_print: {type: DataTypes.INTEGER},
+            created_at: {type: DataTypes.DATE},
+            processed_at: {type: DataTypes.DATE},
+            finish_at: {type: DataTypes.DATE},
+            created_by: {type: DataTypes.INTEGER},
+            processed_by: {type: DataTypes.INTEGER},
+            finish_by: {type: DataTypes.INTEGER},
+
+    },
+    {freezeTableName: true})
 
 
+//ONLY ONE INSTANCE
+const Recept = mysqlMulin.define('recept', {
+            id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
+            id_master: {type: DataTypes.BIGINT, allowNull: false},
+            name: {type: DataTypes.TEXT},
+            bunk1_mat_id: {type: DataTypes.INTEGER},
+            bunk2_mat_id: {type: DataTypes.INTEGER},
+            bunk3_mat_id: {type: DataTypes.INTEGER},
+            bunk4_mat_id: {type: DataTypes.INTEGER},
+            sand: {type: DataTypes.FLOAT},
+            rub: {type: DataTypes.FLOAT},
+            keram: {type: DataTypes.FLOAT},
+            _null: {type: DataTypes.FLOAT},
+            cem1: {type: DataTypes.FLOAT},
+            cem2: {type: DataTypes.FLOAT},
+            wat1: {type: DataTypes.FLOAT},
+            wat2: {type: DataTypes.FLOAT},
+            chem1: {type: DataTypes.FLOAT},
+            chem2: {type: DataTypes.FLOAT},
+            chem3: {type: DataTypes.FLOAT},
+            created_at: {type: DataTypes.DATE},
+            updated_at: {type: DataTypes.DATE},
+            id_sub: {type: DataTypes.INTEGER},
+            modeconc: {type: DataTypes.INTEGER},
+    },
+    {freezeTableName: true})
 
+const Treeview = mysqlMulin.define('treeview', {
+            id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
+            id_master: {type: DataTypes.BIGINT, allowNull: false},
+            name: {type: DataTypes.TEXT},
+            id_sub: {type: DataTypes.INTEGER},
+    },
+    {freezeTableName: true})
 
+const Produc = mysqlMulin.define('produc', {
+            id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
+            id_master: {type: DataTypes.BIGINT, allowNull: false},
+            name_short: {type: DataTypes.TEXT},
+            name_full: {type: DataTypes.TEXT},
+            detail: {type: DataTypes.TEXT},
+            marka: {type: DataTypes.TEXT},
+            pressure: {type: DataTypes.TEXT},
+            class: {type: DataTypes.TEXT},
+            moroz: {type: DataTypes.TEXT},
+            id_sub: {type: DataTypes.INTEGER},
+    },
+    {freezeTableName: true})
 
+const TreeviewProduc = mysqlMulin.define('treeview_produc', {
+            id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
+            id_master: {type: DataTypes.BIGINT, allowNull: false},
+            name: {type: DataTypes.TEXT},
+            id_sub: {type: DataTypes.INTEGER},
+    },
+    {freezeTableName: true})
 
+const Cars = mysqlMulin.define('cars', {
+            id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
+            id_master: {type: DataTypes.BIGINT, allowNull: false},
+            name_short: {type: DataTypes.TEXT},
+            name_full: {type: DataTypes.TEXT},
+            detail: {type: DataTypes.TEXT},
+    },
+    {freezeTableName: true})
+
+const Drives = mysqlMulin.define('drives', {
+            id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
+            id_master: {type: DataTypes.BIGINT, allowNull: false},
+            name_short: {type: DataTypes.TEXT},
+            name_full: {type: DataTypes.TEXT},
+            detail: {type: DataTypes.TEXT},
+    },
+    {freezeTableName: true})
+
+const Kontragents = mysqlMulin.define('kontragents', {
+            id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
+            id_master: {type: DataTypes.BIGINT, allowNull: false},
+            name_short: {type: DataTypes.TEXT},
+            name_full: {type: DataTypes.TEXT},
+            detail: {type: DataTypes.TEXT},
+    },
+    {freezeTableName: true})
+
+const Perevoz = mysqlMulin.define('perevoz', {
+            id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
+            id_master: {type: DataTypes.BIGINT, allowNull: false},
+            name_short: {type: DataTypes.TEXT},
+            name_full: {type: DataTypes.TEXT},
+            detail: {type: DataTypes.TEXT},
+    },
+    {freezeTableName: true})
+
+const Shippers = mysqlMulin.define('shippers', {
+            id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
+            id_master: {type: DataTypes.BIGINT, allowNull: false},
+            name_short: {type: DataTypes.TEXT},
+            name_full: {type: DataTypes.TEXT},
+            detail: {type: DataTypes.TEXT},
+    },
+    {freezeTableName: true})
+
+const Users = mysqlMulin.define('users', {
+            id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true},
+            id_master: {type: DataTypes.BIGINT, allowNull: false},
+            name: {type: DataTypes.TEXT},
+            password: {type: DataTypes.TEXT},
+    },
+    {freezeTableName: true})
 
 
 
 module.exports = {
-    Concplant1,
-    Concplant2,
-    Concplant3,
-    Concplant4,
-    Concplant5,
-
+        Concplant1,
+        Concplant2,
+        Concplant3,
+        Concplant4,
+        Concplant5,
+        Programs1,
+        Programs2,
+        Programs3,
+        Programs4,
+        Programs5,
+        ChangeMaterial1,
+        ChangeMaterial2,
+        ChangeMaterial3,
+        ChangeMaterial4,
+        ChangeMaterial5,
+        LevelMaterial1,
+        LevelMaterial2,
+        LevelMaterial3,
+        LevelMaterial4,
+        LevelMaterial5,
+        LogsException1,
+        LogsException2,
+        LogsException3,
+        LogsException4,
+        LogsException5,
+        LogsMaterial1,
+        LogsMaterial2,
+        LogsMaterial3,
+        LogsMaterial4,
+        LogsMaterial5,
+        Materials1,
+        Materials2,
+        Materials3,
+        Materials4,
+        Materials5,
+        StoreLevel1,
+        StoreLevel2,
+        StoreLevel3,
+        StoreLevel4,
+        StoreLevel5,
+        RequestRecept1,
+        RequestRecept2,
+        RequestRecept3,
+        RequestRecept4,
+        RequestRecept5,
+        Recept,
+        Treeview,
+        Produc,
+        TreeviewProduc,
+        Cars,
+        Drives,
+        Kontragents,
+        Perevoz,
+        Shippers,
+        Users,
 }

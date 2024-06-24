@@ -1,7 +1,7 @@
 const {parseDate} = require('../state/func');
 
 
-class ConcplantValue{
+class ConcplantValue {
     id_master = 0
     sand_netto = 0
     sand_set = 0
@@ -34,10 +34,10 @@ class ConcplantValue{
     change_bunk_id = 0
     created_at = ''
 
-    setParam(param){
-        if(param){
+    setParam(param) {
+        if (param) {
             param.forEach(p => {
-                switch (p.Field){
+                switch (p.Field) {
                     case "id_master":
                         this.id_master = p.Value;
                         break;
@@ -140,6 +140,127 @@ class ConcplantValue{
     }
 }
 
+class Programs {
+    id_master = 0
+    id_prog = 0
+    client = ''
+    car = ''
+    drivename = ''
+    shipper = ''
+    perevoz = ''
+    produc = ''
+    rec_name = ''
+    id_req_rec = 0
+    ttn = 0
+    m_list = 0
+    all_count = 0
+    volume = 0
+    rec_vol = 0
+    rec_sand = 0
+    rec_rub = 0
+    rec_keram = 0
+    rec_null = 0
+    rec_cem1 = 0
+    rec_cem2 = 0
+    rec_wat1 = 0
+    rec_wat2 = 0
+    rec_chem1 = 0
+    rec_chem2 = 0
+    rec_chem3 = 0
+    created_at = ''
+
+    setParam(param) {
+        if (param) {
+            param.forEach(p => {
+                switch (p.Field) {
+                    case "id_master":
+                        this.id_master = p.Value;
+                        break;
+                    case "CLIENT":
+                        this.client = p.Value;
+                        break;
+                    case "CAR":
+                        this.car = p.Value;
+                        break;
+                    case "drivename":
+                        this.drivename = p.Value;
+                        break;
+                    case "shipper":
+                        this.shipper = p.Value;
+                        break;
+                    case "perevoz":
+                        this.perevoz = p.Value;
+                        break;
+                    case "REC_NAME":
+                        this.rec_name = p.Value;
+                        break;
+                    case "produc":
+                        this.produc = p.Value;
+                        break;
+                    case "REC_SAND":
+                        this.rec_sand = p.Value;
+                        break;
+                    case "REC_RUB":
+                        this.rec_rub = p.Value;
+                        break;
+                    case "REC_KERAM":
+                        this.rec_keram = p.Value;
+                        break;
+                    case "REC_NULL":
+                        this.rec_null = p.Value;
+                        break;
+                    case "REC_CEM1":
+                        this.rec_cem1 = p.Value;
+                        break;
+                    case "REC_CEM2":
+                        this.rec_cem2 = p.Value;
+                        break;
+                    case "REC_WAT1":
+                        this.rec_wat1 = p.Value;
+                        break;
+                    case "REC_WAT2":
+                        this.rec_wat2 = p.Value;
+                        break;
+                    case "REC_CHEM1":
+                        this.rec_chem1 = p.Value;
+                        break;
+                    case "REC_CHEM2":
+                        this.rec_chem2 = p.Value;
+                        break;
+                    case "REC_CHEM3":
+                        this.rec_chem3 = p.Value;
+                        break;
+                    case "REC_VOL":
+                        this.rec_vol = p.Value;
+                        break;
+                    case "ALL_COUNT":
+                        this.all_count = p.Value;
+                        break;
+                    case "VOLUME":
+                        this.volume = p.Value;
+                        break;
+                    case "id_req_rec":
+                        this.id_req_rec = p.Value;
+                        break;
+                    case "ttn":
+                        this.ttn = p.Value;
+                        break;
+                    case "m_list":
+                        this.m_list = p.Value;
+                        break;
+                    case "created_at":
+                        this.created_at = parseDate(p.Value);
+                        break;
+
+                }
+            })
+        }
+        return this;
+    }
+}
+
+
 module.exports = {
-    ConcplantValue
+    ConcplantValue,
+    Programs,
 }
