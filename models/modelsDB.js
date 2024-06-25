@@ -1,4 +1,4 @@
-const mysqlMulin = require('../startup/dbMulin');
+const mysqlMulin = require('../db/dbMulin');
 const {DataTypes} = require('sequelize');
 
 

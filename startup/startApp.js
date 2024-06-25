@@ -1,5 +1,5 @@
 const {dateNow} = require('../state/func');
-const mysqlMulin = require("./dbMulin");
+const mysqlMulin = require("../db/dbMulin");
 
 module.exports  = async (app) => {
     try{
