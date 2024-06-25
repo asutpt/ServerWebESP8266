@@ -1,4 +1,6 @@
 const {parseDate} = require('../state/func');
+const mysqlMulin = require("../db/dbMulin");
+const {DataTypes} = require("sequelize");
 
 
 class ConcplantValue {
@@ -131,8 +133,6 @@ class ConcplantValue {
                     case "created_at":
                         this.created_at = parseDate(p.Value);
                         break;
-
-
                 }
             })
         }
@@ -140,7 +140,7 @@ class ConcplantValue {
     }
 }
 
-class Programs {
+class ProgramsValue {
     id_master = 0
     id_prog = 0
     client = ''
@@ -175,6 +175,9 @@ class Programs {
                 switch (p.Field) {
                     case "id_master":
                         this.id_master = p.Value;
+                        break;
+                    case "ID_PROG":
+                        this.id_prog = p.Value;
                         break;
                     case "CLIENT":
                         this.client = p.Value;
@@ -259,8 +262,435 @@ class Programs {
     }
 }
 
+class ChangeMaterialValue {
+    id_master = 0
+    bunk1_mat_id = 0
+    bunk2_mat_id = 0
+    bunk3_mat_id = 0
+    bunk4_mat_id = 0
+    cem1_mat_id = 0
+    cem2_mat_id = 0
+    cem3_mat_id = 0
+    chem1_mat_id = 0
+    chem2_mat_id = 0
+    chem3_mat_id = 0
+    created_at = ''
+
+    setParam(param) {
+        if (param) {
+            param.forEach(p => {
+                switch (p.Field) {
+                    case "id_master":
+                        this.id_master = p.Value;
+                        break;
+                    case "bunk1_mat_id":
+                        this.bunk1_mat_id = p.Value;
+                        break;
+                    case "bunk2_mat_id":
+                        this.bunk2_mat_id = p.Value;
+                        break;
+                    case "bunk3_mat_id":
+                        this.bunk3_mat_id = p.Value;
+                        break;
+                    case "bunk4_mat_id":
+                        this.bunk4_mat_id = p.Value;
+                        break;
+                    case "cem1_mat_id":
+                        this.cem1_mat_id = p.Value;
+                        break;
+                    case "cem2_mat_id":
+                        this.cem2_mat_id = p.Value;
+                        break;
+                    case "cem3_mat_id":
+                        this.cem3_mat_id = p.Value;
+                        break;
+                    case "chem1_mat_id":
+                        this.chem1_mat_id = p.Value;
+                        break;
+                    case "chem2_mat_id":
+                        this.chem2_mat_id = p.Value;
+                        break;
+                    case "chem3_mat_id":
+                        this.chem3_mat_id = p.Value;
+                        break;
+                    case "created_at":
+                        this.created_at = parseDate(p.Value);
+                        break;
+                }
+            })
+        }
+        return this;
+    }
+}
+
+class LevelMaterialValue {
+    id_master = 0
+    sand = 0
+    rub = 0
+    keram = 0
+    _null = 0
+    cem1 = 0
+    cem2 = 0
+    cem3 = 0
+    chem1 = 0
+    chem2 = 0
+    chem3 = 0
+    created_at = ''
+
+    setParam(param) {
+        if (param) {
+            param.forEach(p => {
+                switch (p.Field) {
+                    case "id_master":
+                        this.id_master = p.Value;
+                        break;
+                    case "sand":
+                        this.sand = p.Value;
+                        break;
+                    case "rub":
+                        this.rub = p.Value;
+                        break;
+                    case "keram":
+                        this.keram = p.Value;
+                        break;
+                    case "_null":
+                        this._null = p.Value;
+                        break;
+                    case "cem1":
+                        this.cem1 = p.Value;
+                        break;
+                    case "cem2":
+                        this.cem2 = p.Value;
+                        break;
+                    case "cem3":
+                        this.cem3 = p.Value;
+                        break;
+                    case "chem1":
+                        this.chem1 = p.Value;
+                        break;
+                    case "chem2":
+                        this.chem2 = p.Value;
+                        break;
+                    case "chem3":
+                        this.chem3 = p.Value;
+                        break;
+                    case "created_at":
+                        this.created_at = parseDate(p.Value);
+                        break;
+                }
+            })
+        }
+        return this;
+    }
+}
+
+class LogsExceptionValue {
+    id_master = 0
+    name_function = ''
+    exception = ''
+    comment = ''
+    created_at = ''
+
+    setParam(param) {
+        if (param) {
+            param.forEach(p => {
+                switch (p.Field) {
+                    case "id_master":
+                        this.id_master = p.Value;
+                        break;
+                    case "name_function":
+                        this.name_function = p.Value;
+                        break;
+                    case "exception":
+                        this.exception = p.Value;
+                        break;
+                    case "comment":
+                        this.comment = p.Value;
+                        break;
+                    case "created_at":
+                        this.created_at = parseDate(p.Value);
+                        break;
+                }
+            })
+        }
+        return this;
+    }
+}
+
+class LogsMaterialValue {
+    id_master = 0
+    material = 0
+    value = 0
+    set_add = 0
+    level_silo_old = 0
+    level_silo_new = 0
+    zero_value = 0
+    comment = ''
+    created_at = ''
+
+    setParam(param) {
+        if (param) {
+            param.forEach(p => {
+                switch (p.Field) {
+                    case "id_master":
+                        this.id_master = p.Value;
+                        break;
+                    case "material":
+                        this.material = p.Value;
+                        break;
+                    case "value":
+                        this.value = p.Value;
+                        break;
+                    case "set_add":
+                        this.set_add = p.Value;
+                        break;
+                    case "level_silo_old":
+                        this.level_silo_old = p.Value;
+                        break;
+                    case "level_silo_new":
+                        this.level_silo_new = p.Value;
+                        break;
+                    case "comment":
+                        this.comment = p.Value;
+                        break;
+                    case "zero_value":
+                        this.zero_value = p.Value;
+                        break;
+                    case "created_at":
+                        this.created_at = parseDate(p.Value);
+                        break;
+                }
+            })
+        }
+        return this;
+    }
+}
+
+class MaterialsValue {
+    id_master = 0
+    name = ''
+    comment = ''
+    visible = 0
+    not_inert = 0
+    created_at = ''
+
+    setParam(param) {
+        if (param) {
+            param.forEach(p => {
+                switch (p.Field) {
+                    case "id_master":
+                        this.id_master = p.Value;
+                        break;
+                    case "name":
+                        this.name = p.Value;
+                        break;
+                    case "comment":
+                        this.comment = p.Value;
+                        break;
+                    case "visible":
+                        this.visible = p.Value;
+                        break;
+                    case "not_inert":
+                        this.not_inert = p.Value;
+                        break;
+                    case "created_at":
+                        this.created_at = parseDate(p.Value);
+                        break;
+                }
+            })
+        }
+        return this;
+    }
+}
+
+class StoreLevelValue {
+    id_master = 0
+    id_material = 0
+    value = 0
+    old_value = 0
+    sub_value = 0
+    created_at = ''
+
+    setParam(param) {
+        if (param) {
+            param.forEach(p => {
+                switch (p.Field) {
+                    case "id_master":
+                        this.id_master = p.Value;
+                        break;
+                    case "id_material":
+                        this.id_material = p.Value;
+                        break;
+                    case "value":
+                        this.value = p.Value;
+                        break;
+                    case "old_value":
+                        this.old_value = p.Value;
+                        break;
+                    case "sub_value":
+                        this.sub_value = p.Value;
+                        break;
+                    case "created_at":
+                        this.created_at = parseDate(p.Value);
+                        break;
+                }
+            })
+        }
+        return this;
+    }
+}
+
+class RequestReceptValue {
+    id_master = 0
+    client = ''
+    car = ''
+    drivename = ''
+    shipper = ''
+    perevoz = ''
+    produc = ''
+    rec_name = ''
+    bunk1_mat_id = 0
+    bunk2_mat_id = 0
+    bunk3_mat_id = 0
+    bunk4_mat_id = 0
+    volume = 0
+    volume_false = 0
+    sand = 0
+    rub = 0
+    keram = 0
+    _null = 0
+    cem1 = 0
+    cem2 = 0
+    wat1 = 0
+    chem1 = 0
+    chem2 = 0
+    chem3 = 0
+    status = 0
+    on_print = 0
+    created_at = ''
+    processed_at = ''
+    finish_at = ''
+    created_by = 0
+    processed_by = 0
+    finish_by = 0
+
+    setParam(param) {
+        if (param) {
+            param.forEach(p => {
+                switch (p.Field) {
+                    case "id_master":
+                        this.id_master = p.Value;
+                        break;
+                    case "volume":
+                        this.volume = p.Value;
+                        break;
+                    case "volume_false":
+                        this.volume_false = p.Value;
+                        break;
+                    case "client":
+                        this.client = p.Value;
+                        break;
+                    case "car":
+                        this.car = p.Value;
+                        break;
+                    case "perevoz":
+                        this.perevoz = p.Value;
+                        break;
+                    case "drivename":
+                        this.drivename = p.Value;
+                        break;
+                    case "shipper":
+                        this.shipper = p.Value;
+                        break;
+                    case "produc":
+                        this.produc = p.Value;
+                        break;
+                    case "rec_name":
+                        this.rec_name = p.Value;
+                        break;
+                    case "status":
+                        this.status = p.Value;
+                        break;
+                    case "on_print":
+                        this.on_print = p.Value;
+                        break;
+                    case "sand":
+                        this.sand = p.Value;
+                        break;
+                    case "rub":
+                        this.rub = p.Value;
+                        break;
+                    case "keram":
+                        this.keram = p.Value;
+                        break;
+                    case "_null":
+                        this._null = p.Value;
+                        break;
+                    case "bunk1_mat_id":
+                        this.bunk1_mat_id = p.Value;
+                        break;
+                    case "bunk2_mat_id":
+                        this.bunk2_mat_id = p.Value;
+                        break;
+                    case "bunk3_mat_id":
+                        this.bunk3_mat_id = p.Value;
+                        break;
+                    case "bunk4_mat_id":
+                        this.bunk4_mat_id = p.Value;
+                        break;
+                    case "cem1":
+                        this.cem1 = p.Value;
+                        break;
+                    case "cem2":
+                        this.cem2 = p.Value;
+                        break;
+                    case "wat1":
+                        this.wat1 = p.Value;
+                        break;
+                    case "chem1":
+                        this.chem1 = p.Value;
+                        break;
+                    case "chem2":
+                        this.chem2 = p.Value;
+                        break;
+                    case "chem3":
+                        this.chem3 = p.Value;
+                        break;
+                    case "created_by":
+                        this.created_by = p.Value;
+                        break;
+                    case "finish_by":
+                        this.finish_by = p.Value;
+                        break;
+                    case "processed_by":
+                        this.processed_by = p.Value;
+                        break;
+                    case "created_at":
+                        this.created_at = parseDate(p.Value);
+                        break;
+                    case "processed_at":
+                        this.processed_at = parseDate(p.Value);
+                        break;
+                    case "finish_at":
+                        this.finish_at = parseDate(p.Value);
+                        break;
+                }
+            })
+        }
+        return this;
+    }
+
+}
+
 
 module.exports = {
     ConcplantValue,
-    Programs,
+    ProgramsValue,
+    ChangeMaterialValue,
+    LevelMaterialValue,
+    LogsExceptionValue,
+    LogsMaterialValue,
+    MaterialsValue,
+    StoreLevelValue,
+    RequestReceptValue,
 }

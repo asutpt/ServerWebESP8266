@@ -1,42 +1,56 @@
-const {Concplant1} = require("../models/modelsDB");
-const {Concplant2} = require("../models/modelsDB");
-const {Concplant3} = require("../models/modelsDB");
-const {Concplant4} = require("../models/modelsDB");
-const {Concplant5} = require("../models/modelsDB");
-const {ConcplantValue} = require("../models/models");
+const {logMessage} = require("../state/func");
+const {Sequelize} = require("sequelize");
 
 
 class ConcplantController {
+    constructor(modelName, table1, table2, table3, table4, table5, tv) {
+        this.modelName = modelName;
+        this.table1 = table1;
+        this.table2 = table2;
+        this.table3 = table3;
+        this.table4 = table4;
+        this.table5 = table5;
+        this.tv = tv;
+    }
+
     async create(messageWs, res, next) {
         try {
             if(!messageWs)
                 return;
-            const cv = new ConcplantValue();
             switch (messageWs.Plant) {
                 case "1":
-                    if (await this.checkIsNotExist(messageWs.Message, Concplant1)) {
-                        await Concplant1.create(cv.setParam(messageWs.Message));
-                    } else console.log('Строка с id_master уже есть, Plant=' + messageWs.Plant);
-                    break;
+                    if (await this.checkIsNotExist(messageWs.Message, this.table1)) {
+                        const res = await this.table1.create(this.tv.setParam(messageWs.Message));
+                        if(res) return 'Данные добавлены!';
+                        else return 'Ошибка добавления данных!';
+                    } else return 'Строка с id_master уже есть';
                 case "2":
-                    if (await this.checkIsNotExist(messageWs.Message, Concplant2)) {
-                        await Concplant2.create(cv.setParam(messageWs.Message));
-                    } else console.log('Строка с id_master уже есть, Plant=' + messageWs.Plant);
+                    if (await this.checkIsNotExist(messageWs.Message, this.table2)) {
+                        const res = await this.table2.create(this.tv.setParam(messageWs.Message));
+                        if(res) return 'Данные добавлены!';
+                        else return 'Ошибка добавления данных!';
+                    } else return 'Строка с id_master уже есть';
                     break;
-                case 3:
-                    if (await this.checkIsNotExist(messageWs.Message, Concplant3)) {
-                        await Concplant3.create(cv.setParam(messageWs.Message));
-                    } else console.log('Строка с id_master уже есть, Plant=' + messageWs.Plant);
+                case "3":
+                    if (await this.checkIsNotExist(messageWs.Message, this.table3)) {
+                        const res = await this.table3.create(this.tv.setParam(messageWs.Message));
+                        if(res) return 'Данные добавлены!';
+                        else return 'Ошибка добавления данных!';
+                    } else return 'Строка с id_master уже есть';
                     break;
-                case 4:
-                    if (await this.checkIsNotExist(messageWs.Message, Concplant4)) {
-                        await Concplant4.create(cv.setParam(messageWs.Message));
-                    } else console.log('Строка с id_master уже есть, Plant=' + messageWs.Plant);
+                case "4":
+                    if (await this.checkIsNotExist(messageWs.Message, this.table4)) {
+                        const res = await this.table4.create(this.tv.setParam(messageWs.Message));
+                        if(res) return 'Данные добавлены!';
+                        else return 'Ошибка добавления данных!';
+                    } else return 'Строка с id_master уже есть';
                     break;
-                case 5:
-                    if (await this.checkIsNotExist(messageWs.Message, Concplant5)) {
-                        await Concplant5.create(cv.setParam(messageWs.Message));
-                    } else console.log('Строка с id_master уже есть, Plant=' + messageWs.Plant);
+                case "5":
+                    if (await this.checkIsNotExist(messageWs.Message, this.table5)) {
+                        const res = await this.table5.create(this.tv.setParam(messageWs.Message));
+                        if(res) return 'Данные добавлены!';
+                        else return 'Ошибка добавления данных!';
+                    } else return 'Строка с id_master уже есть';
                     break;
             }
             //console.log();
@@ -50,27 +64,27 @@ class ConcplantController {
         try {
             switch (plant){
                 case "1":
-                    return await Concplant1.findOne({
+                    return await this.table1.findOne({
                         attributes: ['id_master'],
                         order: [['id_master', 'DESC']],
                     });
                 case "2":
-                    return await Concplant2.findOne({
+                    return await this.table2.findOne({
                         attributes: ['id_master'],
                         order: [['id_master', 'DESC']],
                     });
                 case "3":
-                    return await Concplant3.findOne({
+                    return await this.table3.findOne({
                         attributes: ['id_master'],
                         order: [['id_master', 'DESC']],
                     });
                 case "4":
-                    return await Concplant4.findOne({
+                    return await this.table4.findOne({
                         attributes: ['id_master'],
                         order: [['id_master', 'DESC']],
                     });
                 case "5":
-                    return await Concplant5.findOne({
+                    return await this.table5.findOne({
                         attributes: ['id_master'],
                         order: [['id_master', 'DESC']],
                     });
@@ -81,15 +95,15 @@ class ConcplantController {
         }
     }
 
-    async checkIsNotExist(message, concplant){
+    async checkIsNotExist(message, table){
         try {
-           for (const f of message) {
+            for (const f of message) {
                 if (f.Field === 'id_master') {
-                    const res = await concplant.findOne({
+                    const res = await table.findOne({
                         attributes: ['id_master'],
                         where: {'id_master': f.Value},
                     });
-                   return !res;
+                    return !res;
                 }
             }
             return false;
@@ -101,4 +115,6 @@ class ConcplantController {
 
 
 }
-module.exports = new ConcplantController()
+
+
+module.exports = ConcplantController
