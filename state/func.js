@@ -12,7 +12,6 @@ const dateNow = () => {
     return new Date().toISOString().
     replace(/T/, ' ').
     replace(/\..+/, '')
-
 }
 
 const logMessage = (content, messageWS) => {
