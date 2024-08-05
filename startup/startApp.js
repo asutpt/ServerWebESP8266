@@ -13,6 +13,7 @@ module.exports  = async (app) => {
         /*setTimeout(() => {
             console.log(dateNow() + ':  Перезапуск приложения!');
         }, 5000);*/
+        process.exit();
     }
     return `MYSQL подключена, MYSQL синхронизирована, сервер запущен, порт: ${process.env.PORT}`;
 }
